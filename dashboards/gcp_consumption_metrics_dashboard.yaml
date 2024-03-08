@@ -1,0 +1,86 @@
+# Visit https://docs.rilldata.com/reference/project-files to learn more about Rill project files.
+# This file was generated using AI.
+
+title: Metrics for GCP Consumption
+table: gcp_consumption_metrics
+timeseries: usage_start_time
+dimensions:
+  - label: Service Description
+    column: service_description
+    description: ""
+  - label: Sku Description
+    column: sku_description
+    description: ""
+  - label: Usage Unit
+    column: usage_unit
+    description: ""
+  - label: Pricing Unit
+    column: pricing_unit
+    description: ""
+measures:
+  - name: average_cost
+    label: Average Cost
+    expression: AVG(cost)
+    description: The average cost of GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_cost
+    label: Total Cost
+    expression: SUM(cost)
+    description: The total cost of GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: max_usage_amount
+    label: Maximum Usage Amount
+    expression: MAX(usage_amount)
+    description: The maximum usage amount in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: min_usage_amount
+    label: Minimum Usage Amount
+    expression: MIN(usage_amount)
+    description: The minimum usage amount in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: average_usage_amount
+    label: Average Usage Amount
+    expression: AVG(usage_amount)
+    description: The average usage amount in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_usage_amount
+    label: Total Usage Amount
+    expression: SUM(usage_amount)
+    description: The total usage amount in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: true
+  - name: unique_services
+    label: Unique Services
+    expression: COUNT(DISTINCT service_description)
+    description: The count of unique services in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: unique_skus
+    label: Unique SKUs
+    expression: COUNT(DISTINCT sku_description)
+    description: The count of unique SKUs in GCP consumption.
+    format_preset: humanize
+    valid_percent_of_total: false
+  - name: total_entries
+    label: Total Entries
+    expression: COUNT(*)
+    description: The total number of entries in the GCP consumption metrics table.
+    format_preset: humanize
+    valid_percent_of_total: false
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
